@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Início de Tudo - A Verdadeira Linha do Tempo de Gênesis</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 50%, #1a1a1a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #ffd700 30%, #ff8c00 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '♪';
+            font-size: 20px;
+            color: #1a1a1a;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #ffd700, #ff8c00, #ffd700);
+            mask: radial-gradient(circle, transparent 60%, black 61%);
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .channel-link {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .channel-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            border-color: #ffd700;
+            background: #1a1a1a;
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.1) 0%, transparent 60%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffd700, #ff8c00, #ffd700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-text .description {
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #ffd700;
+            color: #1a1a1a;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .book-cover {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .book-cover:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 30px 80px rgba(255, 215, 0, 0.3);
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .floating-elements::before,
+        .floating-elements::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-elements::before {
+            top: 20%;
+            left: 10%;
+            animation-delay: -2s;
+        }
+
+        .floating-elements::after {
+            bottom: 20%;
+            right: 10%;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #ffd700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #ffd700;
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #ffd700;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-embed {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        /* Author Section */
+        .author-section {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .author-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .author-image {
+            text-align: center;
+        }
+
+        .author-logo {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #ffd700 30%, #ff8c00 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            position: relative;
+            font-size: 4rem;
+        }
+
+        .author-logo::before {
+            content: '♪';
+            color: #1a1a1a;
+        }
+
+        .author-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .author-info p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .footer p {
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #ffd700;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: #ff8c00;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .author-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    PraiseNow
+                </a>
+                <a href="https://www.youtube.com/@PraiseNowIA" target="_blank" class="channel-link">
+                    <i class="fab fa-youtube"></i>
+                    Visite Nosso Canal
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>O INÍCIO DE TUDO</h1>
+                    <p class="subtitle">A Verdadeira Linha do Tempo de Gênesis</p>
+                    <p class="description">
+                        Descubra os mistérios da criação através de uma jornada única pelos primeiros capítulos da Bíblia. 
+                        Com linguagem simples e visual envolvente, explore desde a Criação até a jornada de José no Egito.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Baixar E-book
+                        </a>
+                        <a href="#video" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            Assistir Vídeo
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDQwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImJvb2tHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNGRkQ3MDAiLz4KPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNGRjhDMDAiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjQ0Q4NTAwIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI1MDAiIGZpbGw9InVybCgjYm9va0dyYWRpZW50KSIgcng9IjIwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTAwIiBmaWxsPSIjMUExQTFBIiBmb250LXNpemU9IjM2IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TyBJTsONQ0lPPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjE0MCIgZmlsbD0iIzFBMUExQSIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRFIFRVRE88L3RleHQ+Cjx0ZXh0IHg9IjIwMCIgeT0iMjAwIiBmaWxsPSIjMUExQTFBIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QSBWRVJEQURFSVJBIExJTkhBPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjIyNSIgZmlsbD0iIzFBMUExQSIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRPIFRFTVBPIERFIEfDik5FU0lTPC90ZXh0Pgo8cGF0aCBkPSJNMTUwIDMwMCBMMTUwIDM4MCBMMzUwIDM4MCBMMzUwIDMwMCBaIiBmaWxsPSJyZ2JhKDI2LCAyNiwgMjYsIDAuMykiIHJ4PSIxMCIvPgo8cGF0aCBkPSJNMTcwIDMyMCBMMTcwIDM2MCBMMzMwIDM2MCBMMzMwIDMyMCBaIiBmaWxsPSJyZ2JhKDI2LCAyNiwgMjYsIDAuNSkiIHJ4PSI1Ii8+Cjx0ZXh0IHg9IjIwMCIgeT0iNDIwIiBmaWxsPSIjMUExQTFBIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UHJhaXNlIE5vdyBJQTwvdGV4dD4KPC9zdmc+" alt="Capa do E-book O Início de Tudo" class="book-cover">
+                    <div class="floating-elements"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="fade-in">O que você vai descobrir</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📖</div>
+                    <h3>8 Capítulos Completos</h3>
+                    <p>Desde a Criação até José no Egito, cobrindo toda a essência de Gênesis de forma didática e acessível.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Aplicações Práticas</h3>
+                    <p>Cada capítulo termina com reflexões profundas e perguntas que conectam as escrituras à sua vida atual.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">✨</div>
+                    <h3>Linguagem Simples</h3>
+                    <p>Texto claro e objetivo, perfeito para iniciantes nos estudos bíblicos e para quem busca entendimento prático.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Cronologia Clara</h3>
+                    <p>Timeline organizada dos principais eventos, ajudando você a compreender a sequência divina da história.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💎</div>
+                    <h3>Versículos-Chave</h3>
+                    <p>Principais passagens destacadas para memorização e meditação em cada capítulo estudado.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Design Atrativo</h3>
+                    <p>Layout moderno com ilustrações e formatação que torna a leitura mais envolvente e prazerosa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2 class="fade-in">Conheça mais sobre nossa missão</h2>
+            <div class="video-container fade-in">
+                <!-- Placeholder para o vídeo que será adicionado -->
+                <div style="width: 100%; height: 450px; background: rgba(0,0,0,0.5); border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                    <i class="fas fa-play" style="font-size: 4rem; color: #ffd700; margin-bottom: 20px;"></i>
+                    <p style="color: #cccccc; font-size: 1.2rem;">Vídeo será incorporado aqui</p>
+                    <p style="color: #888; margin-top: 10px;">Canal Praise Now IA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="author-section">
+        <div class="container">
+            <div class="author-content">
+                <div class="author-image fade-in">
+                    <div class="author-logo"></div>
+                </div>
+                <div class="author-info fade-in">
+                    <h2>Sobre o Autor</h2>
+                    <p>
+                        <strong>Praise Now IA</strong> é um canal dedicado à produção de conteúdo cristão de qualidade, 
+                        combinando tecnologia e fé para levar a Palavra de Deus de forma moderna e acessível. 
+                        Nosso compromisso é com a fidelidade bíblica e a excelência na comunicação do Evangelho.
+                    </p>
+                    <p>
+                        Este e-book representa nosso desejo de democratizar o conhecimento bíblico, oferecendo 
+                        materiais que ajudem cristãos de todas as idades a compreenderem melhor as Escrituras 
+                        e aplicarem seus ensinamentos no dia a dia.
+                    </p>
+                    <a href="https://www.youtube.com/@PraiseNowIA" target="_blank" class="btn-primary">
+                        <i class="fab fa-youtube"></i>
+                        Inscreva-se no Canal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Praise Now IA. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@PraiseNowIA" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+
+        // Interactive book cover hover effect
+        const bookCover = document.querySelector('.book-cover');
+        if (bookCover) {
+            bookCover.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(50px)`;
+            });
+
+            bookCover.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+            });
+        }
+
+        // Dynamic price display (you can modify this)
+        function displayPrice() {
+            const priceElement = document.createElement('div');
+            priceElement.innerHTML = `
+                <div style="background: linear-gradient(45deg, #ffd700, #ff8c00); color: #1a1a1a; padding: 20px; border-radius: 15px; text-align: center; margin: 20px 0; font-weight: bold; font-size: 1.5rem;">
+                    <span style="text-decoration: line-through; opacity: 0.7; font-size: 1rem;">R$ 29,90</span><br>
+                    <span>Apenas R$ 19,90</span><br>
+                    <span style="font-size: 0.9rem;">🔥 Oferta de Lançamento!</span>
+                </div>
+            `;
+            
+            const ctaButtons = document.querySelector('.cta-buttons');
+            if (ctaButtons) {
+                ctaButtons.insertBefore(priceElement, ctaButtons.firstChild);
+            }
+        }
+
+        // Call price display after page load
+        window.addEventListener('load', displayPrice);
+    </script>
+</body>
+</html>
